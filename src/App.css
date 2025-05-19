@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* For smooth animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Ensure content appears above background elements */
+.Element {
+  position: relative;
+  z-index: 1;
+}
+
+/* Falling elements specific styles */
+.falling-element {
+  position: absolute;
+  pointer-events: none;
+}
+
+.leaf {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+}
+
+.flower {
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
