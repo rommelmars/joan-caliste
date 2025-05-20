@@ -75,6 +75,7 @@ const Books = () => {
 
   const [selectedBook, setSelectedBook] = useState(null);
   const fallElementsContainerRef = useRef(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   // Open book detail modal with the selected book
   const openBookDetail = (book) => {
@@ -86,6 +87,11 @@ const Books = () => {
   const closeBookDetail = () => {
     setSelectedBook(null);
     document.body.style.overflow = 'auto';
+  };
+
+  // Handle video loaded event
+  const handleVideoLoaded = () => {
+    setIsVideoLoaded(true);
   };
 
   // Add falling leaves and flowers effect
@@ -378,6 +384,100 @@ const Books = () => {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Video Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          style={{
+            width: '100%',
+            maxWidth: '1000px',
+            margin: '3rem auto 2rem',
+            padding: '0 15px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            style={{
+              fontFamily: 'Comic Sans MS, cursive',
+              fontSize: 'clamp(1.5rem, 4vw, 2.3rem)',
+              color: '#4A90E2',
+              marginBottom: '1.5rem',
+              textAlign: 'center',
+              width: '100%'
+            }}
+          >
+            Meet the Author
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ 
+              opacity: isVideoLoaded ? 1 : 0, 
+              scale: isVideoLoaded ? 1 : 0.95 
+            }}
+            transition={{ duration: 0.6 }}
+            style={{
+              position: 'relative',
+              width: '100%',
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              borderRadius: '15px',
+              boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2)',
+              overflow: 'hidden',
+              padding: '20px 20px 10px 20px',
+            }}
+          >
+            <div style={{
+              position: 'relative',
+              paddingBottom: '56.25%' /* 16:9 Aspect Ratio */,
+              height: 0,
+              borderRadius: '8px',
+              overflow: 'hidden',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',
+              border: '4px solid white',
+            }}>
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/jttAnxfyhtA" 
+                title="Joan E. Calliste - Author Interview"
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '5px',
+                }}
+                onLoad={handleVideoLoaded}
+              ></iframe>
+            </div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isVideoLoaded ? 1 : 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              style={{
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
+                color: '#555',
+                textAlign: 'center',
+                margin: '15px 0 5px',
+                fontStyle: 'italic'
+              }}
+            >
+              Watch Joan E. Calliste discuss her inspirations and the story behind "Love for the Children"
+            </motion.p>
+          </motion.div>
+        </motion.div>
         
         {/* Book Detail Modal */}
         <AnimatePresence>
