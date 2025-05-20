@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
+import Books from './pages/book';
+import Author from './pages/author';
+import Contact from './pages/contact'; // Import the Contact component
 import './App.css';
 
 function App() {
@@ -9,11 +12,10 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Add other routes when you create those pages */}
-          <Route path="/books" element={<div>Books Page Coming Soon</div>} />
-          <Route path="/author" element={<div>Author Page Coming Soon</div>} />
+          <Route path="/books" element={<Books />} />
+          <Route path="/author" element={<Author />} />
           <Route path="/gallery" element={<div>Gallery Page Coming Soon</div>} />
-          <Route path="/contact" element={<div>Contact Page Coming Soon</div>} />
+          <Route path="/contact" element={<Contact />} /> {/* Use the Contact component */}
         </Routes>
       </div>
     </Router>

@@ -272,7 +272,7 @@ export const Button = styled(motion.button)`
   cursor: pointer;
   margin-top: clamp(2rem, 4vw, 3rem);
   box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
-  text-decoration: none;
+  text-decoration: none;3
   display: inline-block;
 `;
 
