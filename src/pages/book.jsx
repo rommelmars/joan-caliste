@@ -30,7 +30,7 @@ const Books = () => {
   const booksData = [
     {
       id: 1,
-      title: "The Magical Adventure",
+      title: "Love for the Children",
       coverImage: bookCover1,
       modalImage: bookFrontImage,
       description: "Join Lucy on a magical adventure through enchanted forests and mystical lands.",
@@ -59,7 +59,7 @@ const Books = () => {
     },
     {
       id: 2,
-      title: "The Second Adventure",
+      title: "Never Too Late",
       coverImage: bookCover2,
       modalImage: bookFrontImage2,
       description: "A new journey of faith and discovery coming soon.",
