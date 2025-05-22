@@ -217,8 +217,8 @@ const Author = () => {
               >
                 <span className="decoration decoration-1">★</span>
                 <span className="decoration decoration-2">✿</span>
-                <h3>Trinidad and Tobago Heritage</h3>
-                <p>Born and raised in Trinidad and Tobago, Joan brings the rich cultural heritage and storytelling traditions of the Caribbean islands to her writing, infusing her stories with warmth and vibrant imagery.</p>
+                <h3>Storytelling Passion</h3>
+                <p>Joan's natural talent for storytelling emerged during children's hours at church, where she discovered her gift for captivating young audiences and conveying meaningful lessons through engaging narratives.</p>
               </InterestCard>
               
               <InterestCard
